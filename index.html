@@ -1,1 +1,353 @@
-Hello Ashwani
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sun & Soil — Agrivoltaics • Pasture Eggs • Pastured Poultry • Goat Meat • Desi Paneer • Desi Ghee</title>
+  <meta name="description" content="Sun & Soil is an agrivoltaics farm producing pasture‑raised eggs, pastured poultry, goat meat, desi paneer, and desi ghee. Solar + farming for healthier food and land." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23f59e0b'/%3E%3Cstop offset='1' stop-color='%234f46e5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23g)'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-family='Arial' font-size='44' fill='white'%3ESS%3C/text%3E%3C/svg%3E" />
+  <meta property="og:title" content="Sun & Soil — Agrivoltaics Farm" />
+  <meta property="og:description" content="Pasture eggs, pastured poultry, goat meat, desi paneer & desi ghee." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1020" />
+  <style>
+    :root{
+      --bg: #0b1020;
+      --card: #0f172a;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #4f46e5; /* indigo */
+      --accent-2: #22d3ee; /* cyan */
+      --ring: #93c5fd;
+      --radius: 16px;
+      --shadow: 0 12px 30px rgba(0,0,0,.28);
+      --maxw: 1160px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; }
+    }
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{ margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial; color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(34,211,238,.15), transparent 60%),
+        radial-gradient(1200px 800px at 110% 10%, rgba(79,70,229,.14), transparent 60%),
+        var(--bg);
+    }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+    .container{ max-width: var(--maxw); margin-inline:auto; padding: 0 22px; }
+
+    /* Header */
+    .site-header{ position:sticky; top:0; z-index:50; backdrop-filter: blur(8px);
+      background: color-mix(in oklab, var(--bg), transparent 25%);
+      border-bottom: 1px solid rgba(148,163,184,.16);
+    }
+    nav{ display:flex; align-items:center; justify-content:space-between; min-height:68px; }
+    .logo{ display:flex; align-items:center; gap:.6rem; font-weight:800; letter-spacing:.2px; }
+    .logo-badge{ width:30px; height:30px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2)); display:grid; place-items:center; box-shadow: var(--shadow); color:#fff; font-weight:900; }
+    .nav-menu{ display:flex; align-items:center; gap:.25rem; }
+    .nav-menu a{ padding:.6rem .8rem; border-radius:10px; }
+    .nav-menu a:hover{ background: rgba(148,163,184,.12); }
+    .nav-cta{ margin-left:.5rem; }
+    .nav-toggle{ display:none; background:none; border:1px solid rgba(148,163,184,.35); color:inherit; padding:.5rem .6rem; border-radius:10px; }
+    @media (max-width: 880px){
+      .nav-toggle{ display:inline-flex; align-items:center; }
+      .nav-menu{ position: absolute; left:0; right:0; top:68px; display:none; flex-direction:column; gap:0; background: var(--card); border-bottom:1px solid rgba(148,163,184,.15); }
+      .nav-menu.open{ display:flex; }
+      .nav-menu a{ width:100%; padding:1rem 1.25rem; border-radius:0; border-top:1px solid rgba(148,163,184,.12); }
+      .nav-cta{ width:100%; padding: 1rem 1.25rem; }
+    }
+
+    .btn{ display:inline-flex; gap:.5rem; align-items:center; padding:.7rem 1rem; border-radius:12px; border:1px solid rgba(148,163,184,.25); transition: transform .03s ease, box-shadow .2s ease, background .2s ease; cursor:pointer; }
+    .btn:hover{ transform: translateY(-1px); box-shadow: var(--shadow); }
+    .btn.primary{ background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff; border:none; }
+    .btn.ghost{ background: transparent; }
+
+    /* Hero */
+    .hero{ padding: 80px 0 64px; }
+    .hero-grid{ display:grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items:center; }
+    .eyebrow{ color: var(--accent-2); font-weight:800; text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; }
+    .hero h1{ font-size: clamp(2.1rem, 4vw, 3.2rem); line-height:1.12; margin:.4rem 0 1rem; }
+    .hero p{ color: var(--muted); max-width: 65ch; }
+    .hero .cta{ margin-top:1.25rem; display:flex; gap:.8rem; flex-wrap:wrap; }
+    .card{ background: color-mix(in oklab, var(--card), white 2%); border:1px solid rgba(148,163,184,.18); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .stat{ display:grid; grid-template-columns: 56px 1fr; gap:1rem; padding:1rem; align-items:center; }
+    .stat .icon{ width:56px; height:56px; border-radius:14px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display:grid; place-items:center; color:white; font-weight:800; }
+    @media (max-width: 980px){ .hero-grid{ grid-template-columns:1fr; } }
+
+    /* Sections */
+    section{ padding: 72px 0; }
+    .section-title{ font-size: clamp(1.6rem, 3vw, 2.2rem); margin:0 0 .6rem; }
+    .section-lead{ color: var(--muted); max-width:65ch; }
+
+    /* How it works */
+    .steps{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top:1.2rem; }
+    .step{ padding:1.2rem; }
+    .step h3{ margin:.4rem 0 .2rem; font-size:1.1rem; }
+    .step p{ color: var(--muted); }
+    @media (max-width: 900px){ .steps{ grid-template-columns:1fr; } }
+
+    /* Products */
+    .products{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top:1.2rem; }
+    .product{ padding: 1rem; display:grid; gap:.6rem; }
+    .tag{ display:inline-flex; align-items:center; gap:.4rem; font-size:.8rem; padding:.25rem .5rem; border-radius:999px; background: rgba(148,163,184,.15); }
+    .price{ font-weight:800; font-size:1.1rem; }
+    @media (max-width: 1000px){ .products{ grid-template-columns:1fr 1fr; } }
+    @media (max-width: 700px){ .products{ grid-template-columns:1fr; } }
+
+    /* Contact */
+    form{ display:grid; gap:.9rem; max-width: 560px; }
+    .field{ display:grid; gap:.35rem; }
+    label{ font-weight: 600; }
+    input, textarea, select{ background: var(--card); border:1px solid rgba(148,163,184,.35); border-radius:12px; color:inherit; padding:.8rem 1rem; outline:none; }
+    input:focus, textarea:focus, select:focus{ border-color: var(--ring); box-shadow: 0 0 0 4px color-mix(in oklab, var(--ring), transparent 80%); }
+    textarea{ min-height: 140px; resize: vertical; }
+
+    /* Footer */
+    footer{ padding: 56px 0; border-top:1px solid rgba(148,163,184,.18); color: var(--muted); }
+    .footer-grid{ display:grid; grid-template-columns:1fr auto; gap:1rem; align-items:center; }
+    .socials{ display:flex; gap:.6rem; }
+    .chip{ padding:.35rem .6rem; background: rgba(148,163,184,.15); border-radius: 999px; font-size:.85rem; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sun & Soil Agrivoltaics",
+    "url": "https://example.com",
+    "description": "Agrivoltaics farm producing pasture eggs, pastured poultry, goat meat, desi paneer, and desi ghee.",
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav aria-label="Primary">
+        <a class="logo" href="#home" aria-label="Sun & Soil home">
+          <span class="logo-badge">☀️</span>
+          <span>Sun & Soil</span>
+        </a>
+        <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">☰ Menu</button>
+        <div class="nav-menu" id="nav-menu" role="navigation">
+          <a href="#agrivoltaics">Agrivoltaics</a>
+          <a href="#products">Products</a>
+          <a href="#order">Pre‑Order</a>
+          <a href="#contact" class="btn nav-cta primary">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Solar + Farming</div>
+          <h1>Agrivoltaics for healthier food and land.</h1>
+          <p>We co‑locate solar arrays with pastures and crops. Shade from panels keeps animals comfortable, cuts water use, and boosts habitat—while producing clean power for the farm.</p>
+          <div class="cta">
+            <a class="btn primary" href="#products">Shop farm goods</a>
+            <a class="btn ghost" href="#agrivoltaics">How it works</a>
+          </div>
+        </div>
+        <div class="card" aria-hidden="true">
+          <div class="stat">
+            <div class="icon">🌱</div>
+            <div>
+              <strong>Soil health</strong>
+              <div class="muted">Reduced heat stress and improved moisture retention</div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="icon">🐓</div>
+            <div>
+              <strong>Animal welfare</strong>
+              <div class="muted">Shade & shelter for flocks and herds</div>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="icon">⚡</div>
+            <div>
+              <strong>Clean energy</strong>
+              <div class="muted">Powering farm operations and the grid</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agrivoltaics / How it works -->
+    <section id="agrivoltaics">
+      <div class="container">
+        <h2 class="section-title">How agrivoltaics works</h2>
+        <p class="section-lead">Panels are elevated and spaced to let light and rain reach the pasture. Animals graze beneath and between rows; we rotate paddocks to protect forage and soils.</p>
+        <div class="steps">
+          <article class="card step">
+            <h3>1) Elevated racking</h3>
+            <p>Rows are set for farm equipment access and animal movement. The array doubles as shade and windbreak.</p>
+          </article>
+          <article class="card step">
+            <h3>2) Managed grazing</h3>
+            <p>Portable fencing and water points support rotation, encouraging resilient grasses and clover.</p>
+          </article>
+          <article class="card step">
+            <h3>3) Smart operations</h3>
+            <p>We monitor vegetation, bird health, and power output—balancing food and energy year‑round.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products">
+      <div class="container">
+        <h2 class="section-title">Farm products</h2>
+        <p class="section-lead">Raised on pasture under the panels when in season, supplemented as needed for quality and welfare.</p>
+        <div class="products">
+          <article class="card product">
+            <div class="tag">🥚 Pasture‑Raised</div>
+            <h3>Pasture Eggs</h3>
+            <p>Deep‑orange yolks from foraging hens. Rotationally grazed for flavor and ethics.</p>
+            <div class="price">$7 / dozen</div>
+            <a class="btn" href="#order" aria-label="Pre-order pasture eggs">Pre‑order</a>
+          </article>
+          <article class="card product">
+            <div class="tag">🐔 Pastured</div>
+            <h3>Pastured Poultry</h3>
+            <p>Slow‑grown broilers moved daily on grass; tender, flavorful birds.</p>
+            <div class="price">$5.25 / lb whole</div>
+            <a class="btn" href="#order" aria-label="Pre-order pastured poultry">Pre‑order</a>
+          </article>
+          <article class="card product">
+            <div class="tag">🐐 Grass‑fed</div>
+            <h3>Goat Meat</h3>
+            <p>Rotationally grazed goats; halves/wholes by reservation. Processor‑inspected.</p>
+            <div class="price">Market price</div>
+            <a class="btn" href="#order" aria-label="Reserve goat meat">Reserve</a>
+          </article>
+          <article class="card product">
+            <div class="tag">🥛 Desi</div>
+            <h3>Desi Paneer</h3>
+            <p>Fresh, firm paneer made in small batches. Excellent for curries and grills.</p>
+            <div class="price">$10 / 12 oz</div>
+            <a class="btn" href="#order" aria-label="Pre-order desi paneer">Pre‑order</a>
+          </article>
+          <article class="card product">
+            <div class="tag">🧈 Desi</div>
+            <h3>Desi Ghee</h3>
+            <p>Slow‑clarified ghee with rich aroma. Shelf‑stable, high smoke point.</p>
+            <div class="price">$14 / 8 oz</div>
+            <a class="btn" href="#order" aria-label="Pre-order desi ghee">Pre‑order</a>
+          </article>
+          <article class="card product">
+            <div class="tag">📦 CSA</div>
+            <h3>Seasonal Farm Box</h3>
+            <p>Mix of eggs, poultry, and dairy items. Limited shares per season.</p>
+            <div class="price">$45 / box</div>
+            <a class="btn" href="#order" aria-label="Join seasonal box">Join waitlist</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order form -->
+    <section id="order">
+      <div class="container">
+        <h2 class="section-title">Pre‑order / Reserve</h2>
+        <p class="section-lead">Tell us what you’d like. We’ll confirm availability, pickup dates, and payment.</p>
+        <form onsubmit="return orderSubmit(event)">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="field">
+            <label for="product">Product</label>
+            <select id="product" name="product" required>
+              <option value="">Select one…</option>
+              <option>Pasture Eggs</option>
+              <option>Pastured Poultry</option>
+              <option>Goat Meat</option>
+              <option>Desi Paneer</option>
+              <option>Desi Ghee</option>
+              <option>Seasonal Farm Box</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="qty">Quantity / Notes</label>
+            <textarea id="qty" name="qty" placeholder="e.g., 3 dozen eggs; 2 whole birds (~4.5 lb each); 1 lb paneer"></textarea>
+          </div>
+          <button class="btn primary" type="submit">Send request</button>
+          <p class="section-lead" style="font-size:.92rem">This form opens your email client. Replace the address below with your real inbox.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact / Location -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Visit & Contact</h2>
+        <p class="section-lead">Farm pickups by appointment. Saturday farmstand during the season. Follow us for weekly availability.</p>
+        <div class="steps">
+          <div class="card step">
+            <h3>Farm address</h3>
+            <p>123 Slacktown Road, Kingwood, NJ 08825</p>
+          </div>
+          <div class="card step">
+            <h3>Email</h3>
+            <p><a href="mailto:orders@farm.example">orders@farm.example</a></p>
+          </div>
+          <div class="card step">
+            <h3>Social</h3>
+            <p><a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">TikTok</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>© <span id="year"></span> Sun & Soil • <span class="chip">Agrivoltaics & Regenerative Farming</span></div>
+      <div class="socials">
+        <a href="#" aria-label="Instagram" class="chip">Instagram</a>
+        <a href="#" aria-label="Facebook" class="chip">Facebook</a>
+        <a href="#" aria-label="TikTok" class="chip">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.getElementById('nav-menu');
+    toggle?.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Order form -> mailto
+    function orderSubmit(e){
+      e.preventDefault();
+      const data = new FormData(e.target);
+      const body = Array.from(data.entries()).map(([k,v])=> `${k}: ${v}`).join('%0D%0A');
+      const to = 'mailto:orders@farm.example'; // TODO: change to your email
+      window.location.href = `${to}?subject=Farm%20Pre-Order&body=${body}`;
+      alert('Thanks! Your email client should open with your request.');
+      return false;
+    }
+  </script>
+</body>
+</html>
+
